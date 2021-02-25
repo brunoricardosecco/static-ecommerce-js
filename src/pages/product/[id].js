@@ -14,9 +14,7 @@ export const getStaticProps = async (context) => {
   const { id } = context.params;
 
   try {
-    const response = await fetch(
-      `https://90877bdce647.ngrok.io/products/${id}`
-    );
+    const response = await fetch(`http://9c58fd54a801.ngrok.io/products/${id}`);
     const parsedResponse = await response.json();
 
     return {
@@ -38,7 +36,7 @@ export const getStaticProps = async (context) => {
 export const getStaticPaths = async () => {
   try {
     const response = await fetch(
-      'https://90877bdce647.ngrok.io/products?_limit=2'
+      'http://9c58fd54a801.ngrok.io/products?_limit=2'
     );
     const parsedResponse = await response.json();
     const paths = parsedResponse.map((product) => ({

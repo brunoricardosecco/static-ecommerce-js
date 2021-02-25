@@ -24,7 +24,7 @@ const Home = ({ products }) => (
 
 export const getStaticProps = async () => {
   try {
-    const response = await fetch('https://90877bdce647.ngrok.io/products');
+    const response = await fetch('http://9c58fd54a801.ngrok.io/products');
     const parsedResponse = await response.json();
     return {
       props: {
