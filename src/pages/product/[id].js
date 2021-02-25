@@ -1,12 +1,13 @@
-import { ReactElement } from 'react';
-import { GetStaticPaths, GetStaticProps } from 'next';
-
+import Link from 'next/link';
 const DetailedProduct = ({ product }) => (
   <div>
     <h1>Produto:</h1>
     <p>{product?.id}</p>
     <p>{product?.name}</p>
     <p>{product?.description}</p>
+    <Link href={`/`}>
+      <a>Voltar</a>
+    </Link>
   </div>
 );
 

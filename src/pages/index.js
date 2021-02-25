@@ -1,12 +1,7 @@
 import Link from 'next/link';
-import Head from 'next/head';
 
 const Home = ({ products }) => (
   <div>
-    <Head>
-      <title>Static Shop</title>
-    </Head>
-
     <main>
       <h1>Lojinha estática</h1>
       <ul>
