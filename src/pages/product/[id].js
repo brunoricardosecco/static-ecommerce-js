@@ -4,9 +4,9 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 const DetailedProduct = ({ product }) => (
   <div>
     <h1>Produto:</h1>
-    <p>{product.id}</p>
-    <p>{product.name}</p>
-    <p>{product.description}</p>
+    <p>{product?.id}</p>
+    <p>{product?.name}</p>
+    <p>{product?.description}</p>
   </div>
 );
 
@@ -41,7 +41,6 @@ export const getStaticPaths = async () => {
       'https://90877bdce647.ngrok.io/products?_limit=2'
     );
     const parsedResponse = await response.json();
-
     const paths = parsedResponse.map((product) => ({
       params: {
         id: product.id.toString(),
