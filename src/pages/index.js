@@ -18,22 +18,14 @@ const Home = ({ products }) => (
 );
 
 export const getStaticProps = async () => {
-  try {
-    const response = await fetch('http://9c58fd54a801.ngrok.io/products');
-    const parsedResponse = await response.json();
-    return {
-      props: {
-        products: parsedResponse,
-      },
-      revalidate: 5,
-    };
-  } catch (error) {
-    return {
-      props: {
-        products: [],
-      },
-    };
-  }
+  const response = await fetch('http://9c58fd54a801.ngrok.io/products');
+  const parsedResponse = await response.json();
+  return {
+    props: {
+      products: parsedResponse,
+    },
+    revalidate: 5,
+  };
 };
 
 export default Home;
