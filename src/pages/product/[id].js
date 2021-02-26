@@ -14,7 +14,9 @@ const DetailedProduct = ({ product }) => (
 export const getStaticProps = async (context) => {
   const { id } = context.params;
 
-  const response = await fetch(`http://9c58fd54a801.ngrok.io/products/${id}`);
+  const response = await fetch(
+    `https://continuelab.com.br/ws-store/products/${id}`
+  );
   const parsedResponse = await response.json();
 
   return {
@@ -27,7 +29,7 @@ export const getStaticProps = async (context) => {
 
 export const getStaticPaths = async () => {
   const response = await fetch(
-    'http://9c58fd54a801.ngrok.io/products?_limit=2'
+    'https://continuelab.com.br/ws-store/products?_limit=2'
   );
   const parsedResponse = await response.json();
   const paths = parsedResponse.map((product) => ({

@@ -18,7 +18,7 @@ const Home = ({ products }) => (
 );
 
 export const getStaticProps = async () => {
-  const response = await fetch('http://9c58fd54a801.ngrok.io/products');
+  const response = await fetch('https://continuelab.com.br/ws-store/products');
   const parsedResponse = await response.json();
   return {
     props: {
